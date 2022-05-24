@@ -17,7 +17,7 @@ all : $(NAME)
 $(NAME) :
 	gcc -c $(DIR_SRC)$(SRC) -o $(OBJS)
 	mv $(OBJS) $(DIR_OBJ)
-	ar rcs $@ $(DIR_OBJ) .
+	ar rcs $@ $(DIR_OBJ)$(OBJS)
 
 clean:
 	rm -rf $(DIR_OBJS)
