@@ -2,18 +2,21 @@ NAME = libftprintf.a
 
 CFLAGS = -Wall -Wextra -Werror
 
-OBJ_NAME = $(DIR_SRC:.c=.o)
+OBJS = $(SRC:.c=.o)
 
-DIR_OBJ = objs/*.o
+DIR_OBJ = objs/
 
-DIR_SRC = srcs/*.c
+DIR_SRC = srcs/
+
+SRC = ft_printf.c
 
 DIR_HEADER= header/*.h
 
 all : $(NAME)
 
 $(NAME) :
-	gcc -c $(DIR_SRC) -o $(OBJ_NAME) $(DIR_OBJ)
+	gcc -c $(DIR_SRC)$(SRC) -o $(OBJS)
+	mv $(OBJS) $(DIR_OBJ)
 	ar rcs $@ $(DIR_OBJ) .
 
 clean:
