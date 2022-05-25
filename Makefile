@@ -20,7 +20,7 @@ $(NAME) :
 	ar rcs $@ $(DIR_OBJ)$(OBJS)
 
 clean:
-	rm -rf $(DIR_OBJS)
+	rm -rf $(DIR_OBJ)$(OBJS)
 
 fclean : clean
 	rm -rf $(NAME)
