@@ -10,7 +10,9 @@ DIR_SRC = srcs/
 
 SRC = ft_printf.c
 
-DIR_HEADER= header/*.h
+DIR_HEADER= header/
+
+DIR = mkdir 
 
 all : $(NAME)
 
@@ -24,6 +26,14 @@ clean:
 
 fclean : clean
 	rm -rf $(NAME)
+
+start:
+	$(DIR) $(DIR_SRC)
+	$(DIR) $(DIR_OBJ)
+	$(DIR) $(DIR_HEADER)
+	touch $(DIR_SCR)$(SRC)
+
+
 re: fclean all
 
 .PHONY : all clean fclean all re

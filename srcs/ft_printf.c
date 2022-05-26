@@ -10,11 +10,13 @@ int	ft_printf(char	const *str, ...)
 	while (*str)
 	{
 		if ((*str) == '%')
+		{
 			num += ft_arg_printf(ap, *++str) ;
 			str++;
+		}
 		else
 			num += ft_putchar(*str);
-			str++;
+		str++;
 	}
 	va_end(ap);
 	return (num);
@@ -32,11 +34,18 @@ int	ft_arg_printf(va_list ap, char chr)
 	else if (chr == 's')
 		res += ft_putstr(va_arg(ap, char *));
 	else if (chr == 'x')
-		res += ft_hexa(va_arg(ap, int));
-	if (chr == 'p')
-		res += ft_hexa(va_arg(ap, int));
+		res += ft_hexa(va_arg(ap, unsigned int));
+	else if (chr == 'X')
+		res += ft_hexa(va_arg(ap, unsigned int));	
+	else if (chr == 'p')
+	{
+		res += ft_putstr("0x");
+		res += ft_hexa(va_arg(ap, unsigned long int));
+	}
+	else if (chr == 'u')
+		res += ft_putnbru(va_arg(ap, unsigned int));
 	else if (chr == '%')
-		res += ft_putchar(' ');
+		res += ft_putchar('%');
 	return (res);
 }
 
