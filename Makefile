@@ -1,41 +1,39 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/05/27 12:25:43 by jaizpuru          #+#    #+#              #
+#    Updated: 2022/05/27 12:25:45 by jaizpuru         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 
 CFLAGS = -Wall -Wextra -Werror
 
-OBJS = $(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
-DIR_OBJ = objs/
-
-DIR_SRC = srcs/
-
-SRC = ft_printf.c
-
-DIR_HEADER= header/
-
-DIR = mkdir 
+SRCS = ft_printf.c ft_utils.c
 
 all : $(NAME)
 
-$(NAME) :
-	gcc -c $(DIR_SRC)$(SRC) -o $(OBJS)
-	mv $(OBJS) $(DIR_OBJ)
-	ar rcs $@ $(DIR_OBJ)$(OBJS)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+$(OBJS): $(SRCS)
+	gcc $(CFLAGS) -c $(SRCS)
 
 clean:
-	rm -rf $(DIR_OBJ)$(OBJS)
+	rm -rf $(OBJS)
 
 fclean : clean
 	rm -rf $(NAME)
 
-start:
-	$(DIR) $(DIR_SRC)
-	$(DIR) $(DIR_OBJ)
-	$(DIR) $(DIR_HEADER)
-	touch $(DIR_SCR)$(SRC)
+re: all fclean
 
-
-re: fclean all
-
-.PHONY : all clean fclean all re
+.PHONY : all clean fclean re
 
 
