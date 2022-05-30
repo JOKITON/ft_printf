@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:13:29 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/05/27 12:25:24 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:04:41 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_putchar(char c)
 	int	res;
 
 	res = 0;
-	if (!c)
-		return (0);
 	res += write (1, &c, 1);
 	return (res);
 }

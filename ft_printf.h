@@ -6,17 +6,15 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:15:54 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/05/27 12:13:44 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:03:24 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>
-# include <unistd.h>
-# include <limits.h>
 # include <stdarg.h>
+# include <unistd.h>
 /* MAIN FUNCTIONS */
 
 int	ft_printf(char const *str, ...);
