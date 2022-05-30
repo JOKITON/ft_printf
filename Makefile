@@ -32,7 +32,7 @@ clean:
 fclean : clean
 	rm -rf $(NAME)
 
-re: all fclean
+re: fclean all
 
 .PHONY : all clean fclean re
 
