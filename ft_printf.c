@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:13:56 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/05/30 15:04:16 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/06/06 17:17:56 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int	ft_arg_printf(va_list ap, char chr)
 	if (chr == 'c')
 		res += ft_putchar(va_arg(ap, int));
 	else if (chr == 'd')
-		res += ft_putnbrv2(va_arg(ap, int));
+		res += ft_putnbr_total(va_arg(ap, int));
 	else if (chr == 'i')
-		res += ft_putnbrv2(va_arg(ap, int));
+		res += ft_putnbr_total(va_arg(ap, int));
 	else if (chr == 's')
 		res += ft_putstr(va_arg(ap, char *));
 	else if (chr == 'x' || chr == 'X')
@@ -54,7 +54,7 @@ int	ft_arg_printf(va_list ap, char chr)
 	}
 	else if (chr == 'u')
 	{
-		res += ft_putnbr(va_arg(ap, unsigned int));
+		res += ft_putnbr_unsigned(va_arg(ap, unsigned int));
 	}
 	else
 		if (chr == '%')

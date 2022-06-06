@@ -6,7 +6,7 @@
 /*   By: jaizpuru <jaizpuru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:13:29 by jaizpuru          #+#    #+#             */
-/*   Updated: 2022/05/30 15:04:41 by jaizpuru         ###   ########.fr       */
+/*   Updated: 2022/06/06 17:18:29 by jaizpuru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 int	ft_putchar(char c)
 {
-	int	res;
-
-	res = 0;
-	res += write (1, &c, 1);
-	return (res);
+	return (write (1, &c, 1));
 }
 
 int	ft_putstr(char	*str)
@@ -36,13 +32,13 @@ int	ft_putstr(char	*str)
 	return (res);
 }
 
-int	ft_putnbr(unsigned int numb)
+int	ft_putnbr_unsigned(unsigned int numb)
 {
 	int	res;
 
 	res = 0;
 	if (numb >= 10)
-		res = ft_putnbr(numb / 10);
+		res = ft_putnbr_unsigned(numb / 10);
 	numb = numb % 10;
 	if (numb < 10)
 		res += ft_putchar(numb + '0');
@@ -69,7 +65,7 @@ int	ft_hexa(unsigned long int numb, char chr)
 	return (res);
 }
 
-int	ft_putnbrv2(int nb)
+int	ft_putnbr_total(int nb)
 {
 	int	dest;
 
@@ -82,7 +78,7 @@ int	ft_putnbrv2(int nb)
 		nb *= -1;
 	}
 	if (nb >= 10)
-		dest += ft_putnbr(nb / 10);
+		dest += ft_putnbr_unsigned(nb / 10);
 	nb = nb % 10;
 	if (nb < 10)
 		dest += ft_putchar(nb + 48);
