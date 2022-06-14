@@ -4,10 +4,10 @@ The goal of this project was to create a group of correlated functions that coul
 
 I have 4 files:
 
-1- Makefile
-2- Header file (ft_printf.h)
-3- Source code file (ft_printf.c)
-4- Source code file (ft_utils.c)
+1- Makefile /
+2- Header file (ft_printf.h) /
+3- Source code file (ft_printf.c) /
+4- Source code file (ft_utils.c) /
 
 1- We use the Makefile to make easier our compiling and library creating process, along with cleaning the junk files.
    We have a set of rules made for each of those processes:
